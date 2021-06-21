@@ -19,6 +19,7 @@ def main(argv):
         sys.exit(2)
     if len(sys.argv) < 2:
         print("label.py -h <help>")
+        sys.exit(2)
     for opt, arg in opts:
         if opt == '-h':
             print("label.py [options]")
@@ -39,6 +40,7 @@ filepath = r"C:\xampp\htdocs\pc2021\meteorological-singapore.csv"
 train = pd.read_csv(filepath)
 
 X = train.drop(columns=['Precipitation'])
+from sklearn import preprocessing
 ley = preprocessing.LabelEncoder()
 y = train.Precipitation
 y = ley.fit_transform(y)

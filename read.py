@@ -2,7 +2,7 @@ import serial
 import requests
 
 urls = "http://192.168.147.235/savedb.php"
-arduino = serial.Serial("COM4", timeout=1, baundrate=9600)
+arduino = serial.Serial("COM4", timeout=1, baudrate=9600)
 
 while True:
     a = arduino.readline().decode("utf-8").strip('\n').strip('\r')

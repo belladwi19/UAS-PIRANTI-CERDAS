@@ -98,7 +98,7 @@
             return Pp;
         }
 
-        function GetLabel() {
+        function getLabel() {
             $.ajax({
                 url: 'getdata.php',
                 method: 'POST',
@@ -125,15 +125,15 @@
 
         function onRefresh(chart) {
             chart.data.datasets[0].data.push({
-                x: Data.now(),
+                x: Date.now(),
                 y: GetTt()
             });
             chart.data.datasets[1].data.push({
-                x: Data.now(),
+                x: Date.now(),
                 y: GetHh()
             });
             chart.data.datasets[2].data.push({
-                x: Data.now(),
+                x: Date.now(),
                 y: GetPp()
             });
             getLabel();
